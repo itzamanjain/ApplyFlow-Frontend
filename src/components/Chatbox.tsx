@@ -48,12 +48,12 @@ const Chatbox: React.FC<ChatboxProps> = ({ resumeText }) => {
   }
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md h-[600px] flex flex-col">
-      <div className="flex-1 overflow-y-auto mb-4">
+    <div className="bg-white rounded-lg h-[350px] flex flex-col overflow-hidden">
+      <div className="flex-1 overflow-y-auto mb-4 pr-4 scrollbar-hide">
         {messages.map((message, index) => (
           <div
             key={index}
-            className={`mb-2 p-2 rounded-lg ${
+            className={`mb-2 p-2 rounded-lg max-w-[80%] ${
               message.isUser
                 ? 'bg-blue-100 text-blue-800 ml-auto'
                 : 'bg-gray-100 text-gray-800'
@@ -64,18 +64,18 @@ const Chatbox: React.FC<ChatboxProps> = ({ resumeText }) => {
         ))}
         <div ref={messagesEndRef} />
       </div>
-      <form onSubmit={handleSubmit} className="flex">
+      <form onSubmit={handleSubmit} className="flex ">
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask a question about your resume..."
-          className="flex-1 p-2 border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Ask about your resume..."
+          className="flex-1 p-2 border-t rounded-md border-l border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
           disabled={isLoading}
         />
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-r-lg disabled:bg-gray-400"
+          className="bg-blue-500 rounded-md ml-2 text-white px-4 py-2 border-t border-r border-blue-600 disabled:bg-gray-400 disabled:border-gray-500"
           disabled={isLoading}
         >
           {isLoading ? 'Thinking...' : 'Send'}

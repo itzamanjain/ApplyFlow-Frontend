@@ -60,8 +60,8 @@ const ResumeUploader: React.FC<ResumeUploaderProps> = ({ onUpload }) => {
 
   return (
     <div className="max-w-md mx-auto">
-      <div className="bg-white p-8 rounded-xl shadow-lg">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+      <div className="bg-white  rounded-xl ">
+        <h2 className="text-2xl font-bold text-gray-800 mb-3 text-center">
           Upload Your Resume
         </h2>
         

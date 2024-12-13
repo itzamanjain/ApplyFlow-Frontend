@@ -13,14 +13,14 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-gray-100 p-6 flex flex-col items-center">
-      <div className="w-full max-w-4xl bg-white shadow-xl rounded-xl p-6">
-        <header className="text-center mb-8">
-          <h1 className="text-4xl font-extrabold text-gray-800 mb-3">
-            Resume AI Assistant
+      <>
+          <div className="w-full max-w-4xl bg-white  rounded-xl ">
+        <header className="text-center">
+          <h1 className="text-2xl  font-bold text-gray-800 mb-3">
+            Resume AI Assistent
           </h1>
           {!isResumeUploaded && (
-            <p className="text-lg text-gray-600">
+            <p className="text-sm  text-gray-600 mb-2">
               Upload your resume to get started with AI-powered job application assistance.
             </p>
           )}
@@ -56,7 +56,15 @@ const App: React.FC = () => {
           </div>
         )}
       </div>
-    </div>
+      <footer className="w-full text-center mt-3 ">
+        <div className="max-w-4xl mx-auto px-4">
+          <p className="text-md text-gray-600 font-medium">
+            © {new Date().getFullYear()} ApplyFlow | All right reserved
+          </p>
+        </div>
+      </footer>
+      </>
+    
   );
 };
 
