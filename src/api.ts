@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:3000'  // Replace with your FastAPI server URL
+const API_BASE_URL = process.env.VITE_API_BASE_URL  // Replace with your FastAPI server URL
 
 let full_text = ''
 export const uploadResume = async (file: File): Promise<string> => {
